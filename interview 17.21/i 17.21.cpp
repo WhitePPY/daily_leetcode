@@ -1,11 +1,11 @@
-int trap(vectorint &height)
+int trap(vector<int> &height)
 {
     int layer = 1;
     int left = -1;
     int right = -1;
     int bar = 0;
     int all = 0;
-    for (int i = 0; i  height.size(); i++)
+    for (int i = 0; i < height.size(); i++)
     {
         if (height[i])
         {
@@ -17,15 +17,15 @@ int trap(vectorint &height)
     }
     if (left == right)
         return 0;
-    while (left = right)
+    while (left <= right)
     {
         all += right - left + 1;
         layer++;
-        while (left = right && height[left]  layer)
+        while (left <= right && height[left] < layer)
         {
             left++;
         }
-        while (left = right && height[right]  layer)
+        while (left <= right && height[right] < layer)
         {
             right--;
         }
